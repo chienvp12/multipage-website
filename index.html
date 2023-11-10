@@ -13,33 +13,19 @@
 <body>
     <!-------------------------------------------- HEADER SECTION -->
     <header class="header" >
-        <a href="#" class="logo">
+        <a href="./index.html" class="logo">
             <img src="./image/pngegg.png" alt="logo">
         </a>
-        <nav class="navbar">
-            <a href="./index.html" class="active">home</a>
-            <a href="./about.html">about</a>
-            <a href="./menu.html">menu</a>
-            <a href="./products.html">products</a>
-            <a href="./review.html">review</a>
-            <a href="./contact.html">contact</a>
-            <a href="./blog.html">blog</a>
+        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+        <nav class="navbar" id="navbar">
+            <a href="./index.html" class="menu-option">home</a>
+            <a href="./about.html" class="menu-option" >about</a>
+            <a href="./menu.html" class="menu-option">menu</a>
+            <a href="./products.html" class="menu-option">products</a>
+            <a href="./review.html" class="menu-option">review</a>
+            <a href="./contact.html" class="menu-option">contact</a>
+            <a href="./blog.html" class="menu-option">blog</a>
         </nav>
-        <div class="buttons">
-            <button id="search-btn">
-                <i class="fas fa-search"></i>
-            </button>
-            <button id="cart-btn">
-                <i class="fas fa-shopping-cart"></i>
-            </button>
-            <button id="menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div class="search-form">
-            <input type="text" class="search-input" id="search-box" placeholder="Search">
-            <i class="fas fa-search"></i>
-        </div>
         <div class="cart-items-container">
             <div class="cart-item">
                 <i class="fas fa-times"></i>
@@ -348,10 +334,7 @@
     
     <!---------------------------------------------FOOTER SECTION -->
     <section class="footer">
-        <div class="search">
-            <input type="text" class="search-input" placeholder="Search">
-            <button class="btn btn-primary">search</button>
-        </div>
+        
         <div class="share">
             <a href="#" class="fab fa-facebook"></a>
             <a href="#" class="fab fa-twitter"></a>
@@ -367,9 +350,6 @@
             <a href="#review">review</a>
             <a href="#contact">contact</a>
             <a href="#blog">blog</a>
-        </div>
-        <div class="credit">
-            creaated by <span>Nizami Sevindi</span> | all rights reserved!
         </div>
     </section>
     <!---------------------------------------------FOOTER SECTION -->

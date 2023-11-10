@@ -1,36 +1,30 @@
-const searchForm = document.querySelector('.search-form');
-const searchBtn = document.querySelector('#search-btn');
-const cartItem = document.querySelector('.cart-items-container')
-const cartBtn = document.querySelector('#cart-btn')
-const navbar = document.querySelector('.navbar')
-const menuBtn = document.querySelector('#menu-btn')
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    const menuOptions = document.querySelectorAll('.menu-option');
 
+    menuToggle.addEventListener('click', function () {
+        navbar.classList.toggle('active');
+    });
 
+    // Bắt sự kiện khi click vào mỗi tùy chọn
+    menuOptions.forEach(option => {
+        option.addEventListener('click', function () {
+            // Ẩn menu khi người dùng chọn một tùy chọn
+            navbar.classList.remove('active');
+        });
+    });
 
-searchBtn.addEventListener('click', ()=>{
-    searchForm.classList.toggle('active');
-    document.addEventListener('click', (e)=>{
-        if(!e.composedPath().includes(searchBtn) && !e.composedPath().includes(searchForm) ){
-            searchForm.classList.remove('active');
-        }
-    })
-})
-
-cartBtn.addEventListener('click', ()=>{
-    cartItem.classList.toggle('active');
-    document.addEventListener('click', (e)=>{
-        if(!e.composedPath().includes(cartBtn) && !e.composedPath().includes(cartItem) ){
-            cartItem.classList.remove('active');
-        }
-    })
-})
-
-menuBtn.addEventListener('click', ()=>{
-    navbar.classList.toggle('active');
-    document.addEventListener('click', (e)=>{
-        if(!e.composedPath().includes(navbar) && !e.composedPath().includes(menuBtn) ){
+    // Bắt sự kiện click ra ngoài để ẩn menu
+    document.addEventListener('click', function (event) {
+        if (window.innerWidth < 768 && !navbar.contains(event.target) && !menuToggle.contains(event.target)) {
             navbar.classList.remove('active');
         }
-    })
-})
+    });
 
+    // Bắt sự kiện trước khi rời trang
+    window.addEventListener('beforeunload', function () {
+        // Đảm bảo menu đã được đóng trước khi rời trang
+        navbar.classList.remove('active');
+    });
+});
